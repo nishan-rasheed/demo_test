@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import 'cart_model.dart';
 import 'cart_screen.dart';
@@ -45,7 +46,12 @@ class HomeScreen extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (context) => CartScreen(),));
       }),
       appBar: AppBar(),
-    body: ListView.builder(
+    body: Column(
+      children: [
+        Container(color: Colors.red,
+          height: 20.h,width: 20.h,
+        ),
+      ListView.builder(
       shrinkWrap: true,
       itemCount: products.length,
       itemBuilder: (BuildContext context, int index) {
@@ -65,6 +71,8 @@ class HomeScreen extends StatelessWidget {
         ) ;
       },
     ),
+      ],
+    )
     );
   }
 }
